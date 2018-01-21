@@ -1,17 +1,14 @@
 import { Component, OnInit } from '@angular/core';
-
 import { Reserva } from '../reserva';
 import { ReservaService } from '../reserva.service';
 
 @Component({
-  selector: 'app-reservas',
-  templateUrl: './reservas.component.html',
-  styleUrls: ['./reservas.component.css']
+  selector: 'app-dashboard',
+  templateUrl: './dashboard.component.html',
+  styleUrls: [ './dashboard.component.css' ]
 })
-export class ReservasComponent implements OnInit {
-
-
-  reservas: Reserva[]; 
+export class DashboardComponent implements OnInit {
+  reservas: Reserva[] = [];
 
   constructor(private reservaService: ReservaService) { }
 
@@ -21,6 +18,6 @@ export class ReservasComponent implements OnInit {
 
   getReservas(): void {
     this.reservaService.getReservas()
-        .subscribe(reservas => this.reservas = reservas);
+      .subscribe(reservas => this.reservas = reservas.slice(1, 5));
   }
 }

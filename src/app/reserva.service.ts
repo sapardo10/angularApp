@@ -17,4 +17,10 @@ export class ReservaService {
     this.messageService.add('ReservaService: fetched reservas');
     return of(RESERVAS);
   }
+
+  getReserva(id: number): Observable<Reserva> {
+  // Todo: send the message _after_ fetching the hero
+  this.messageService.add(`HeroService: fetched reserva id=${id}`);
+  return of(RESERVAS.find(reserva => reserva.id === id));
+  }
 }
