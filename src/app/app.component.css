@@ -14,7 +14,7 @@ h1 {
   text-transform: uppercase;
   text-rendering: optimizeLegibility;
     color: #131313;
-    background-color: #e7e5e4;
+    background-color: #f5f5f5;
     letter-spacing: .15em;
     text-shadow: 
       1px -1px 0 #767676, 
@@ -47,7 +47,19 @@ h1 {
       -27px 54px 1px #e2e0df, 
       -28px 56px 1px #e4e3e2;
   }
+  .elegantshadowtwo {
+    font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;
+  font-size: 50px;
+  padding: 80px 50px;
+  text-align: center;
+  text-rendering: optimizeLegibility;
+    color: #131313;
+    background-color: #e7e5e4;
+    letter-spacing: .15em;
+    
+  }
   .deepshadow {
+
     color: #e0dfdc;
     background-color: #333;
     letter-spacing: .1em;
