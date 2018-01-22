@@ -1,6 +1,26 @@
 <br><br><br><br>
 <h3>Reservas</h3>
+
 <br><br>
+
+<div class="forma">
+  <label>Lugar :
+    <input #lugarV />
+  </label>
+  <br>
+  <label>Usuario :
+    <input #user />
+  </label>
+  <br>
+  <label>Fecha :
+    <input #fecha />
+  </label>
+  <br>
+  <!-- (click) passes input value to add() and then clears the input -->
+  <button (click)="add(lugarV.value,user.value,fecha.value); lugarV.value=''">
+    Agregar
+  </button>
+</div>
 <div class="grid grid-pad">
   <a *ngFor="let reserva of reservas" class="col-1-4"
     routerLink="/detail/{{reserva.id}}">

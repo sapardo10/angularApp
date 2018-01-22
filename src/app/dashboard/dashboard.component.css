@@ -72,3 +72,10 @@ button {
   font-size: 40px;
   margin-left: 20px;
 }
+.forma{
+  align-self: center;
+  font-family: Share, Helvetica, Arial, sans-serif;
+  font-size: 40px;
+  align-content: center;
+  display: inline-block;
+}

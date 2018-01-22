@@ -22,10 +22,21 @@ export class DashboardComponent implements OnInit {
 
   getReservas(): void {
     this.reservaService.getReservas()
-      .subscribe(reservas => this.reservas = reservas.slice(1, 5));
+      .subscribe(reservas => this.reservas = reservas);
   }
 
   goBack(): void {
   this.location.back();
-}
+  }
+
+  add(lugar:string, usuario:string, fecha:string){
+    lugar = lugar.trim();
+    usuario = usuario.trim();
+    fecha = fecha.trim();
+    if(!lugar || !usuario || !fecha) { return ; }
+    this.reservaService.addReserva({lugar,usuario,fecha} as Reserva)
+    .subscribe(reserva => {
+      this.reservas.push(reserva);
+      })
+  }
 }

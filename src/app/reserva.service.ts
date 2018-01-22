@@ -44,6 +44,14 @@ export class ReservaService {
     );
   }
 
+  /** POST: add a new hero to the server */
+  addReserva (reserva: Reserva): Observable<Reserva> {
+    return this.http.post<Reserva>(this.reservasUrl, reserva, httpOptions).pipe(
+      tap((reserva: Reserva) => this.log(`added reserva w/ id=${reserva.id}`)),
+      catchError(this.handleError<Reserva>('addReserva'))
+    );
+  }
+
   private log(message: string) {
   this.messageService.add('HeroService: ' + message);
   }
