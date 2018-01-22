@@ -1,19 +1,22 @@
-<div *ngIf="reserva">
-	<h2>Detalles de la reserva</h2>
-	<div><span>Id: </span>{{reserva.id}}</div>
-	<div>
-	    <label>Lugar:
-	      <input [(ngModel)]="reserva.lugar" placeholder="lugar">
-	    </label>
-	</div>
-	<div>
-	    <label>Usuario:
-	      <input [(ngModel)]="reserva.usuario" placeholder="usuario">
-	    </label>
-	</div>
-	<div>
-	    <label>Fecha:
-	      <input [(ngModel)]="reserva.fecha" placeholder="fecha">
-	    </label>
-	</div>
+<div *ngIf="reserva" class="forma">
+	
+		<h2>Detalles de la reserva</h2>
+		<div><span>Id: </span>{{reserva.id}}</div>
+		<div>
+		    <label>Lugar:
+		      <input [(ngModel)]="reserva.lugar" placeholder="lugar" >
+		    </label>
+		</div>
+		<div>
+		    <label>Usuario:
+		      <input [(ngModel)]="reserva.usuario" placeholder="usuario">
+		    </label>
+		</div>
+		<div>
+		    <label>Fecha:
+		      <input [(ngModel)]="reserva.fecha" placeholder="fecha">
+		    </label>
+		</div>
+	
 </div>
+<button (click)="goBack()">Retornar</button>

@@ -17,12 +17,17 @@ a {
 }
 h3 {
   text-align: center; margin-bottom: 0;
+  font-weight: normal;
+  font-size: 30px;
+  font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;
+  text-transform: uppercase;
 }
 h4 {
   position: relative;
 }
 .grid {
   margin: 0;
+  margin-left: 20px;
 }
 .col-1-4 {
   width: 25%;
@@ -33,7 +38,7 @@ h4 {
   color: #eee;
   max-height: 120px;
   min-width: 120px;
-  background-color: #607D8B;
+  background-color: #c6b993;
   border-radius: 2px;
 }
 .module:hover {
@@ -60,4 +65,6 @@ h4 {
     min-width: 60px;
   }
 }
-
+h3 {
+  
+}

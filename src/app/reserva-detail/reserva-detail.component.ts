@@ -28,5 +28,8 @@ export class ReservaDetailComponent implements OnInit {
   this.reservaService.getReserva(id)
     .subscribe(reserva => this.reserva = reserva);
   }
+  goBack(): void {
+  this.location.back();
+}
 
 }
