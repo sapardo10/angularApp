@@ -8,6 +8,9 @@ import { Reserva } from './reserva';
 import { RESERVAS } from './mock-reservas';
 import { MessageService } from './message.service';
 
+const httpOptions = {
+  headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+};
 
 @Injectable()
 export class ReservaService {
@@ -30,6 +33,14 @@ export class ReservaService {
     return this.http.get<Reserva>(url).pipe(
       tap(_ => this.log(`fetched reserva id=${id}`)),
       catchError(this.handleError<Reserva>(`getReserva id=${id}`))
+    );
+  }
+
+    /** PUT: update the hero on the server */
+  updateReserva (reserva: Reserva): Observable<any> {
+    return this.http.put(this.reservasUrl, reserva, httpOptions).pipe(
+      tap(_ => this.log(`updated reserva id=${reserva.id}`)),
+      catchError(this.handleError<any>('updateReserva'))
     );
   }
 
