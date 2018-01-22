@@ -15,6 +15,7 @@ import { AppRoutingModule } from './/app-routing.module';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { LoginComponent } from './login/login.component';
 import { IntroComponent } from './intro/intro.component';
+import { AnunciosComponent } from './anuncios/anuncios.component';
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import { IntroComponent } from './intro/intro.component';
     ReservaDetailComponent,
     DashboardComponent,
     LoginComponent,
-    IntroComponent
+    IntroComponent,
+    AnunciosComponent
   ],
   imports: [
     BrowserModule,

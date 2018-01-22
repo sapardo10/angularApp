@@ -5,6 +5,7 @@ import { DashboardComponent }   from './dashboard/dashboard.component';
 import { ReservaDetailComponent }  from './reserva-detail/reserva-detail.component';
 import { LoginComponent } from './login/login.component';
 import { IntroComponent } from './intro/intro.component';
+import { AnunciosComponent } from './anuncios/anuncios.component';
 
 const routes: Routes = [
   
@@ -12,6 +13,7 @@ const routes: Routes = [
   { path: 'intro', component: IntroComponent },
   { path: 'login', component: LoginComponent },
   { path: 'dashboard', component: DashboardComponent },
+  { path: 'anuncios' , component: AnunciosComponent },
   { path: 'detail/:id', component: ReservaDetailComponent },
   { path: 'reservas', component: ReservasComponent }
 ];
