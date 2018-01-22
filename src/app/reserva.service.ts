@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
 import { of } from 'rxjs/observable/of';
+import { catchError, map, tap } from 'rxjs/operators';
 
 import { Reserva } from './reserva';
 import { RESERVAS } from './mock-reservas';
@@ -16,16 +17,44 @@ export class ReservaService {
 
 
   getReservas(): Observable<Reserva[]> {
-  return this.http.get<Reserva[]>(this.reservasUrl);
+  return this.http.get<Reserva[]>(this.reservasUrl)
+  .pipe(
+      tap(reservas => this.log(`fetched reservas`)),
+      catchError(this.handleError('getReservas', []))
+    );
   }
 
+  /** GET hero by id. Will 404 if id not found */
   getReserva(id: number): Observable<Reserva> {
-  // Todo: send the message _after_ fetching the hero
-  this.messageService.add(`HeroService: fetched reserva id=${id}`);
-  return of(RESERVAS.find(reserva => reserva.id === id));
+    const url = `${this.reservasUrl}/${id}`;
+    return this.http.get<Reserva>(url).pipe(
+      tap(_ => this.log(`fetched reserva id=${id}`)),
+      catchError(this.handleError<Reserva>(`getReserva id=${id}`))
+    );
   }
 
   private log(message: string) {
   this.messageService.add('HeroService: ' + message);
-}
+  }
+
+  /**
+   * Handle Http operation that failed.
+   * Let the app continue.
+   * @param operation - name of the operation that failed
+   * @param result - optional value to return as the observable result
+   */
+  private handleError<T> (operation = 'operation', result?: T) {
+    return (error: any): Observable<T> => {
+ 
+      // TODO: send the error to remote logging infrastructure
+      console.error(error); // log to console instead
+ 
+      // TODO: better job of transforming error for user consumption
+      this.log(`${operation} failed: ${error.message}`);
+ 
+      // Let the app keep running by returning an empty result.
+      return of(result as T);
+    };
+  }
+
 }
