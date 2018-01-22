@@ -6,7 +6,7 @@ import { ReservaDetailComponent }  from './reserva-detail/reserva-detail.compone
 
 const routes: Routes = [
   
-  { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
+  { path: '', redirectTo: '/', pathMatch: 'full' },
   { path: 'dashboard', component: DashboardComponent },
   { path: 'detail/:id', component: ReservaDetailComponent },
   { path: 'reservas', component: ReservasComponent }
