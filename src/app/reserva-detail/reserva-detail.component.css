@@ -1,0 +1,30 @@
+@import url(https://fonts.googleapis.com/css?family=Share:400,700&subset=latin,latin-ext);
+button {
+  align-self: center;
+  font-family: Share, Helvetica, Arial, sans-serif;
+  font-size: 40px;
+  margin-left: 20px;
+}
+label{
+  align-self: center;
+  font-family: Share, Helvetica, Arial, sans-serif;
+  font-size: 40px;
+}
+h2{
+  align-self: center;
+  font-family: Share, Helvetica, Arial, sans-serif;
+  font-size: 80px;
+}
+.forma{
+  align-self: center;
+  font-family: Share, Helvetica, Arial, sans-serif;
+  font-size: 40px;
+  align-content: center;
+  display: inline-block;
+}
+input{
+  align-self: center;
+  font-family: Share, Helvetica, Arial, sans-serif;
+  font-size: 40px;
+  align-content: center;
+}

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Reserva } from '../reserva';
 import { ReservaService } from '../reserva.service';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-dashboard',
@@ -10,7 +11,10 @@ import { ReservaService } from '../reserva.service';
 export class DashboardComponent implements OnInit {
   reservas: Reserva[] = [];
 
-  constructor(private reservaService: ReservaService) { }
+  constructor(private reservaService: ReservaService,
+    private location: Location) { 
+
+  }
 
   ngOnInit() {
     this.getReservas();
@@ -20,4 +24,8 @@ export class DashboardComponent implements OnInit {
     this.reservaService.getReservas()
       .subscribe(reservas => this.reservas = reservas.slice(1, 5));
   }
+
+  goBack(): void {
+  this.location.back();
+}
 }
