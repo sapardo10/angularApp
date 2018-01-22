@@ -1,8 +1,6 @@
 <h2>Mis reservas</h2>
 <ul class="reservas">
-  <li *ngFor="let reserva of reservas"
-    [class.selected]="reserva === selectedReserva"
-    (click)="onSelect(reserva)">
+  <li *ngFor="let reserva of reservas">
     <span class="badge">{{reserva.id}}</span> {{reserva.lugar}}
   </li>
 </ul>

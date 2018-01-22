@@ -26,7 +26,7 @@ export class ReservaDetailComponent implements OnInit {
   getReserva(): void {
   const id = +this.route.snapshot.paramMap.get('id');
   this.reservaService.getReserva(id)
-    .subscribe(reserva => this.reserva = reserva;
+    .subscribe(reserva => this.reserva = reserva);
   }
 
 }
